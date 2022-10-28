@@ -1,0 +1,8 @@
+--- Subistituir vários valores de uma vez
+
+= Table.ReplaceValue(#"Valor Substituído",
+each [COLUNA],
+each if [COLUNA] ="Autonomo" then "Autônomo"
+else if [COLUNA] ="Ministerio Publico do Trabalho" then "Ministério Público do Trabalho"
+else if [COLUNA] ="Proprio" then "Próprio" else [COLUNA],
+Replacer.ReplaceText,{"COLUNA"})
